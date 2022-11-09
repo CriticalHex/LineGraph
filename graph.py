@@ -10,10 +10,10 @@ class Graph:
             self.to: Graph.Node = to
 
     def __init__(self) -> None:
-        self.nodes: dict[str, Graph.Node]
+        self.nodes: dict[str, Graph.Node] = {}
 
     def add_node(self, id: str, val: any):
-        self.nodes[id] = val
+        self.nodes[id] = Graph.Node(val)
 
     def add_line(self, start_node_id: str, stop_node_id: str, val: any):
         self.nodes[start_node_id].lines.append(
